@@ -1,15 +1,18 @@
 package com.company.library.service;
 
+import com.company.library.dto.ErrorDto;
 import com.company.library.dto.ResponseDto;
 import com.company.library.dto.requestDto.RequestBookDto;
 import com.company.library.dto.responseDto.ResponseBookDto;
 import com.company.library.service.mapper.BookMapper;
 import com.company.library.repository.BooksRepository;
+import com.company.library.service.validation.BookValidation;
 import com.company.library.util.SimpleCrud;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -17,9 +20,18 @@ import java.time.LocalDateTime;
 public class BookService implements SimpleCrud<Integer, RequestBookDto, ResponseBookDto> {
     private final BookMapper bookMapper;
     private final BooksRepository booksRepository;
+    private final BookValidation bookValidation;
 
     @Override
     public ResponseDto<ResponseBookDto> createEntity(RequestBookDto dto) {
+        List<ErrorDto> valid = this.bookValidation.bookValid(dto);
+        if(!valid.isEmpty()){
+            return ResponseDto.<ResponseBookDto>builder()
+                    .code(-3)
+                    .message("Validation Error")
+                    .errorList(valid)
+                    .build();
+        }
         try {
             return ResponseDto.<ResponseBookDto>builder()
                     .success(true)

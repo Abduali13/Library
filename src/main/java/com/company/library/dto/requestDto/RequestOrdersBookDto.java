@@ -1,5 +1,6 @@
 package com.company.library.dto.requestDto;
 
+
 import lombok.*;
 
 @Getter
@@ -8,6 +9,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestOrdersBookDto {
-    private Integer orderId;
 
+    private Integer bookId;
+
+    private Integer orderId;
 }
