@@ -9,4 +9,5 @@ import lombok.*;
 @AllArgsConstructor
 public class RequestOrdersDto {
     private Integer total;
+    private Integer userId;
 }
