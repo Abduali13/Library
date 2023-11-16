@@ -1,24 +1,37 @@
 package com.company.library.service;
 
+import com.company.library.dto.ErrorDto;
 import com.company.library.dto.ResponseDto;
 import com.company.library.dto.requestDto.RequestOrdersDto;
 import com.company.library.dto.responseDto.ResponseOrdersDto;
 import com.company.library.service.mapper.OrdersMapper;
 import com.company.library.repository.OrdersRepository;
+import com.company.library.service.validation.OrderValidation;
 import com.company.library.util.SimpleCrud;
+import jdk.dynalink.linker.LinkerServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class OrdersService implements SimpleCrud<Integer, RequestOrdersDto, ResponseOrdersDto> {
     private final OrdersMapper ordersMapper;
     private final OrdersRepository ordersRepository;
+    private final OrderValidation orderValidation;
 
     @Override
     public ResponseDto<ResponseOrdersDto> createEntity(RequestOrdersDto dto) {
+        List<ErrorDto> valid = this.orderValidation.orderValid(dto);
+        if(!valid.isEmpty()){
+            return ResponseDto.<ResponseOrdersDto>builder()
+                    .code(-3)
+                    .message("Validation Error")
+                    .errorList(valid)
+                    .build();
+        }
         try {
 
             return ResponseDto.<ResponseOrdersDto>builder()

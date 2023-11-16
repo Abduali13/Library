@@ -15,4 +15,8 @@ public class RequestBookDto {
     private Integer page;
     private LocalDate published;
     private Float amount;
+    private Integer authorId;
+    private Integer goalId;
+    private Integer publisherId;
+    private Integer imageId;
 }
