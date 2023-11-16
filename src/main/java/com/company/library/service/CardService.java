@@ -1,15 +1,19 @@
 package com.company.library.service;
 
+import com.company.library.dto.ErrorDto;
 import com.company.library.dto.ResponseDto;
 import com.company.library.dto.requestDto.RequestCardDto;
 import com.company.library.dto.responseDto.ResponseCardDto;
 import com.company.library.service.mapper.CardMapper;
 import com.company.library.repository.CardRepository;
+import com.company.library.service.validation.CardValidation;
 import com.company.library.util.SimpleCrud;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -17,9 +21,18 @@ import java.time.LocalDateTime;
 public class CardService implements SimpleCrud<Integer, RequestCardDto, ResponseCardDto> {
     private final CardMapper cardMapper;
     private final CardRepository cardRepository;
+    private final CardValidation cardValidation;
 
     @Override
     public ResponseDto<ResponseCardDto> createEntity(RequestCardDto dto) {
+        List<ErrorDto> valid = this.cardValidation.cardValid(dto);
+        if(!valid.isEmpty()){
+            return ResponseDto.<ResponseCardDto>builder()
+                    .errorList(valid)
+                    .message("Validation Error")
+                    .code(-3)
+                    .build();
+        }
         try {
             return ResponseDto.<ResponseCardDto>builder()
                     .success(true)
