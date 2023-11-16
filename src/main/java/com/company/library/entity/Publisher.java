@@ -24,6 +24,17 @@ public class Publisher {
     private String publisher;
     private String location;
 
+    @Column(name = "book_id")
+    private Integer bookId;
+
+    @OneToOne
+    @JoinColumn(
+            name = "book_id",
+            referencedColumnName = "book_id",
+            insertable = false,
+            updatable = false)
+    private Book book;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp

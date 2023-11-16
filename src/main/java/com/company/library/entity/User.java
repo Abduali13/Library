@@ -27,14 +27,17 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+
+    @Column(name = "gender_id")
     private Integer genderId;
+
     private String phone;
     private String password;
     private Integer cardId;
     private LocalDate birthDate;
 
     @OneToOne
-    @JoinColumn(name = "genderId", referencedColumnName = "gender_id", insertable = false, updatable = false)
+    @JoinColumn(name = "gender_id", referencedColumnName = "gender_id", insertable = false, updatable = false)
     private Gender gender;
 
     @OneToMany(mappedBy = "userId",

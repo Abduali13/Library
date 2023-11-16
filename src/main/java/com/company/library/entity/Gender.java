@@ -24,7 +24,7 @@ public class Gender {
 
     @Enumerated(EnumType.STRING)
     private Genders name;
-    enum Genders{
+    public enum Genders{
         MALE,
         FEMALE
     }
