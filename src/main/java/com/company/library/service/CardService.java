@@ -63,6 +63,14 @@ public class CardService implements SimpleCrud<Integer, RequestCardDto, Response
 
     @Override
     public ResponseDto<ResponseCardDto> updateEntity(Integer entityId, RequestCardDto dto) {
+        List<ErrorDto> valid = this.cardValidation.cardValid(dto);
+        if(!valid.isEmpty()){
+            return ResponseDto.<ResponseCardDto>builder()
+                    .errorList(valid)
+                    .message("Validation Error")
+                    .code(-3)
+                    .build();
+        }
         try {
             return this.cardRepository.findByCardIdAndDeletedAtIsNull(entityId)
                     .map(card -> ResponseDto.<ResponseCardDto>builder()
