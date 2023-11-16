@@ -18,7 +18,6 @@ import java.util.List;
 public class ResponseBookDto {
     private Integer bookId;
 
-    @NotBlank(message = "Book Name cannot be null or empty")
     private String bookName;
 
     private Integer authorId;

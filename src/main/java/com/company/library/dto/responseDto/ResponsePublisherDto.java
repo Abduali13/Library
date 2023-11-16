@@ -16,9 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class ResponsePublisherDto {
     private Integer publisherId;
-    @NotBlank(message = "Publisher cannot be null or empty")
     private String publisher;
-    @NotBlank(message = "Location cannot be null or empty")
     private String location;
 
     private LocalDateTime createdAt;

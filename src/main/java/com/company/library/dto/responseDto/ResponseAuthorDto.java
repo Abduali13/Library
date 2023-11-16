@@ -12,11 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class ResponseAuthorDto {
     private Integer authorId;
-
-    @NotBlank(message = "AuthorFirstName cannot be null or empty")
     private String authorFirstName;
-
-    @NotBlank(message = "AuthorLastName cannot be null or empty")
     private String authorLastName;
 
     private Integer authorAge;

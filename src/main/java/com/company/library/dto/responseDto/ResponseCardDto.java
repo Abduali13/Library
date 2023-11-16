@@ -15,10 +15,8 @@ import java.time.LocalDateTime;
 public class ResponseCardDto {
     private Integer cardId;
 
-    @NotBlank(message = "Card Name cannot be null or empty")
     private String cardName;
 
-    @NotNull(message = "Card Number cannot be null or empty")
     private String cardNumber;
 
     private Integer userId;

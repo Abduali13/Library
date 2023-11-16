@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class ResponseImageDto {
     private Integer imageId;
-    @NotBlank(message = "Path cannot be null or empty")
     private String path;
     private String type;
     private String size;
