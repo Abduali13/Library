@@ -42,6 +42,8 @@ public class Book {
     private LocalDate published;
     private Float amount;
 
+    @Column(name = "orders_book_id")
+    private Integer ordersBookId;
 
     @OneToOne
     @JoinColumn(
@@ -64,7 +66,7 @@ public class Book {
 
 
     @ManyToOne
-    @JoinColumn(name = "book_id", insertable = false, updatable = false)
+    @JoinColumn(name = "orders_book_id", insertable = false, updatable = false)
     private OrdersBook ordersBooks;
 
     @CreationTimestamp
