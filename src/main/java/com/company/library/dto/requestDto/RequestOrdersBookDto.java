@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RequestOrdersDto {
-    private Integer total;
-    private Integer userId;
+public class RequestOrdersBookDto {
+    private Integer orderId;
+
 }

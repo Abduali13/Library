@@ -1,5 +1,7 @@
 package com.company.library.dto.requestDto;
 
+import com.company.library.entity.Image;
+import com.company.library.entity.Publisher;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -15,4 +17,6 @@ public class RequestBookDto {
     private Integer page;
     private LocalDate published;
     private Float amount;
-}
+
+    private Integer publisherId;
+    private Integer imageId;}
