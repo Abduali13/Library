@@ -1,4 +1,4 @@
-package com.company.library.mapper;
+package com.company.library.service.mapper;
 
 import com.company.library.dto.requestDto.RequestImageDto;
 import com.company.library.dto.responseDto.ResponseImageDto;

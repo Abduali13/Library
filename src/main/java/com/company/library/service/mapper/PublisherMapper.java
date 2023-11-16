@@ -1,4 +1,4 @@
-package com.company.library.mapper;
+package com.company.library.service.mapper;
 
 import com.company.library.dto.requestDto.RequestPublisherDto;
 import com.company.library.dto.responseDto.ResponsePublisherDto;
