@@ -18,22 +18,26 @@ import static com.company.library.dto.SimpleResponseDto.convertStatusCodeByData;
 public class UserController implements SimpleRequestCrud<Integer, RequestUserDto, ResponseUserDto> {
     private final UserService userService;
 
+    @PostMapping
     @Override
     public ResponseEntity<ResponseDto<ResponseUserDto>> createEntity(@RequestBody @Valid RequestUserDto entity) {
         return convertStatusCodeByData(this.userService.createEntity(entity));
     }
 
+    @GetMapping
     @Override
     public ResponseEntity<ResponseDto<ResponseUserDto>> getEntity(@RequestParam(value = "id") Integer entityId) {
         return convertStatusCodeByData(this.userService.getEntity(entityId));
     }
 
+    @PutMapping
     @Override
     public ResponseEntity<ResponseDto<ResponseUserDto>> updateEntity(@RequestParam(value = "id") Integer entityId,
                                                                      @RequestBody @Valid RequestUserDto entity) {
         return convertStatusCodeByData(this.userService.updateEntity(entityId, entity));
     }
 
+    @DeleteMapping
     @Override
     public ResponseEntity<ResponseDto<ResponseUserDto>> deleteEntity(@RequestParam(value = "id") Integer entityId) {
         return convertStatusCodeByData(this.userService.deleteEntity(entityId));
