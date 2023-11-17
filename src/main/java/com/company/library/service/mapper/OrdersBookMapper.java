@@ -22,6 +22,6 @@ public abstract class OrdersBookMapper {
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "deletedAt", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE, resultType = OrdersBook.class)
-    public abstract OrdersBook updateOrdersBook(@MappingTarget OrdersBook ordersBook);
+    public abstract OrdersBook updateOrdersBook(@MappingTarget OrdersBook ordersBook, RequestOrdersBookDto dto);
 
 }

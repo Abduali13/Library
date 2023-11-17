@@ -76,7 +76,7 @@ public class OrdersBookService implements SimpleCrud<Integer, RequestOrdersBookD
                     .map(ordersBook -> ResponseDto.<ResponseOrdersBookDto>builder()
                             .success(true)
                             .message("OK")
-                            .content(this.ordersBookMapper.toDto(this.ordersBookRepository.save(this.ordersBookMapper.updateOrdersBook(ordersBook))))
+                            .content(this.ordersBookMapper.toDto(this.ordersBookRepository.save(this.ordersBookMapper.updateOrdersBook(ordersBook, entity))))
                             .build())
                     .orElse(ResponseDto.<ResponseOrdersBookDto>builder()
                             .message(String.format("OrdersBok with %d: id is not found", entityId))
