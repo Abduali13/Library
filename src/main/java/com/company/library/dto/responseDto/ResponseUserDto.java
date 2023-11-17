@@ -43,9 +43,9 @@ public class ResponseUserDto {
 
     private Gender gender;
 
-    private Set<Card> cards;
+    private Set<ResponseCardDto> cards;
 
-    private List<Orders> orders;
+    private List<ResponseOrdersDto> orders;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

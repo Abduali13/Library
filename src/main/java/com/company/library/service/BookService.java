@@ -62,6 +62,14 @@ public class BookService implements SimpleCrud<Integer, RequestBookDto, Response
 
     @Override
     public ResponseDto<ResponseBookDto> updateEntity(Integer entityId, RequestBookDto dto) {
+        List<ErrorDto> valid = this.bookValidation.bookValid(dto);
+        if(!valid.isEmpty()){
+            return ResponseDto.<ResponseBookDto>builder()
+                    .code(-3)
+                    .message("Validation Error")
+                    .errorList(valid)
+                    .build();
+        }
         try {
 
             return this.booksRepository.findByBookId(entityId)

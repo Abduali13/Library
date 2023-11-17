@@ -28,9 +28,9 @@ public abstract class UserMapper {
     @Mapping(target = "cards", ignore = true)
     public abstract ResponseUserDto toDto(User user);
 
-    /*@Mapping(target = "cards", expression = "java(user.getCards().stream().map(" +
+    @Mapping(target = "cards", expression = "java(user.getCards().stream().map(" +
             "this.cardMapper::toDto).collect(Collectors.toSet()))")
-    public abstract ResponseUserDto toDtoWithCard(User user); */
+    public abstract ResponseUserDto toDtoWithCard(User user);
 
 
     @Mapping(target = "userId", ignore = true)

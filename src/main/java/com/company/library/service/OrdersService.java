@@ -62,6 +62,14 @@ public class OrdersService implements SimpleCrud<Integer, RequestOrdersDto, Resp
 
     @Override
     public ResponseDto<ResponseOrdersDto> updateEntity(Integer entityId, RequestOrdersDto dto) {
+        List<ErrorDto> valid = this.orderValidation.orderValid(dto);
+        if(!valid.isEmpty()){
+            return ResponseDto.<ResponseOrdersDto>builder()
+                    .code(-3)
+                    .message("Validation Error")
+                    .errorList(valid)
+                    .build();
+        }
         try {
 
             return this.ordersRepository.findByOrderIdAndDeletedAtIsNull(entityId)

@@ -22,7 +22,7 @@ public class ResponseOrdersBookDto {
 
     private Orders orders;
 
-    private List<Book> books;
+    private List<ResponseOrdersBookDto> books;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
