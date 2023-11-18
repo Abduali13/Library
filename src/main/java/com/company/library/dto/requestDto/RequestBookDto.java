@@ -23,4 +23,6 @@ public class RequestBookDto {
 
     private Integer publisherId;
     private Integer imageId;
+    private Integer authorId;
+    private Integer goalId;
 }
