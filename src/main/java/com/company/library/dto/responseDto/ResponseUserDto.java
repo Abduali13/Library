@@ -1,10 +1,7 @@
 package com.company.library.dto.responseDto;
 
-import com.company.library.entity.Card;
 import com.company.library.entity.Gender;
-import com.company.library.entity.Orders;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -19,6 +16,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties(value = "password",allowSetters = true)
 public class ResponseUserDto {
     private Integer userId;
 
@@ -28,9 +26,7 @@ public class ResponseUserDto {
     @NotBlank(message = "Last Name cannot be null or empty")
     private String lastName;
 
-    @Email(message = "Email not valid")
-    @NotBlank(message = "Email cannot be null or empty")
-    private String email;
+     private String username;
 
     private Integer genderId;
     @NotNull(message = "Phone cannot be null or empty")

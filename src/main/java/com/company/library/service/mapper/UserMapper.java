@@ -6,6 +6,7 @@ import com.company.library.entity.User;
 import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.stream.Collectors;
 
@@ -15,6 +16,8 @@ public abstract class UserMapper {
     @Lazy
     @Autowired
     protected CardMapper cardMapper;
+    @Autowired
+    protected PasswordEncoder passwordEncoder;
 
     @Mapping(target = "userId", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
@@ -23,7 +26,9 @@ public abstract class UserMapper {
     @Mapping(target = "cards", ignore = true)
     @Mapping(target = "orders", ignore = true)
     @Mapping(target = "gender", ignore = true)
+    @Mapping(target = "password",expression = "java(passwordEncoder.encode(dto.getPassword()))")
     public abstract User toEntity(RequestUserDto dto);
+
 
     @Mapping(target = "cards", ignore = true)
     public abstract ResponseUserDto toDto(User user);
