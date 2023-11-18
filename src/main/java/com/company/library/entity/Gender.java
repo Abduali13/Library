@@ -23,7 +23,7 @@ public class Gender {
     private Integer genderId;
 
     @Enumerated(EnumType.STRING)
-    private Genders name;
+    private Genders genders;
     public enum Genders{
         MALE,
         FEMALE
