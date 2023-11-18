@@ -26,18 +26,22 @@ public class User {
     private Integer userId;
     private String firstName;
     private String lastName;
-    private String email;
-
-    @Column(name = "gender_id")
+    private String username;
     private Integer genderId;
-
     private String phone;
     private String password;
     private Integer cardId;
     private LocalDate birthDate;
 
+    private boolean enabled;
+
+    @OneToMany(mappedBy = "username",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
+    private Set<Authorities>authorities;
+
     @OneToOne
-    @JoinColumn(name = "gender_id", referencedColumnName = "gender_id", insertable = false, updatable = false)
+    @JoinColumn(name = "genderId", referencedColumnName = "gender_id", insertable = false, updatable = false)
     private Gender gender;
 
     @OneToMany(mappedBy = "userId",
