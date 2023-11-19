@@ -26,6 +26,18 @@ public class Author {
     private String authorLastName;
     private Integer authorAge;
 
+    @Column(name = "book_id")
+    private Integer bookId;
+
+    @OneToOne
+    @JoinColumn(
+            name = "book_id",
+            referencedColumnName = "book_id",
+            insertable = false,
+            updatable = false)
+    private Book book;
+
+
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp

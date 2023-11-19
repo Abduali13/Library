@@ -1,5 +1,6 @@
 package com.company.library.dto.requestDto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 public class RequestUserDto {
     private String firstName;
     private String lastName;
-    private String email;
+    private String username;
     private Integer genderId;
     private String phone;
     private String password;
