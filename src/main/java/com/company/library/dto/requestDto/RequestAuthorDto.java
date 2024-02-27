@@ -8,7 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestAuthorDto {
+
     private String authorFirstName;
     private String authorLastName;
     private Integer authorAge;
+
 }

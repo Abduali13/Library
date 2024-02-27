@@ -16,9 +16,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseBookDto {
+
     private Integer bookId;
 
-    @NotBlank(message = "Book Name cannot be null or empty")
     private String bookName;
 
     private Integer authorId;
@@ -40,4 +40,5 @@ public class ResponseBookDto {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

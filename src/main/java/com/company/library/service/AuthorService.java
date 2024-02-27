@@ -14,9 +14,9 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 public class AuthorService implements SimpleCrud<Integer, RequestAuthorDto, ResponseAuthorDto> {
+
     private final AuthorMapper authorMapper;
     private final AuthorRepository authorRepository;
-
 
     @Override
     public ResponseDto<ResponseAuthorDto> createEntity(RequestAuthorDto dto) {

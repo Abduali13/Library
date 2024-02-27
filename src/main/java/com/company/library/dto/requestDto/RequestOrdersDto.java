@@ -8,6 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestOrdersDto {
+
     private Integer total;
     private Integer userId;
+
 }

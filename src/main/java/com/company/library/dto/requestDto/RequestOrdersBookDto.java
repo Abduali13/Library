@@ -11,6 +11,6 @@ import lombok.*;
 public class RequestOrdersBookDto {
 
     private Integer bookId;
-
     private Integer orderId;
+
 }

@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestBookDto {
+
     private String bookName;
     private Float price;
     private Integer page;
@@ -19,4 +20,5 @@ public class RequestBookDto {
     private Integer goalId;
     private Integer publisherId;
     private Integer imageId;
+
 }

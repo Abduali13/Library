@@ -8,4 +8,5 @@ public interface SimpleRequestCrud<K,RQ,Rs> {
     ResponseEntity<ResponseDto<Rs>> getEntity(K entityId);
     ResponseEntity<ResponseDto<Rs>> updateEntity(K entityId, RQ entity);
     ResponseEntity<ResponseDto<Rs>> deleteEntity(K entityId);
+
 }

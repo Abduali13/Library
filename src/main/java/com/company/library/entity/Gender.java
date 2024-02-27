@@ -34,4 +34,5 @@ public class Gender {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseGoalDto {
+
     private Integer goalId;
     private Book book;
     private String language;
@@ -20,4 +21,5 @@ public class ResponseGoalDto {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

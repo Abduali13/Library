@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
     Optional<Author> findByAuthorIdAndDeletedAtIsNull(Integer authorId);
@@ -18,4 +17,5 @@ public interface AuthorRepository extends JpaRepository<Author, Integer> {
     //TODO: 2: native query
     //TODO: 3: HQL -> Hibernate Query Language
     //TODO: 4: Named Query
+
 }

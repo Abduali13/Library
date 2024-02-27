@@ -10,4 +10,5 @@ import java.util.Optional;
 
 public interface OrdersBookRepository extends JpaRepository<OrdersBook,Integer> {
     Optional<OrdersBook> findByOrdersBookIdAndDeletedAtIsNull(Integer integer);
+
 }

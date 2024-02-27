@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseDto<T> {
+
     private boolean success;
 
     private int code;
@@ -19,4 +20,5 @@ public class ResponseDto<T> {
     private T content;
 
     private List<ErrorDto> errorList;
+
 }

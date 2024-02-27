@@ -1,6 +1,5 @@
 package com.company.library.repository;
 
-
 import com.company.library.entity.Card;
 import com.company.library.entity.User;
 import org.springframework.data.domain.Page;

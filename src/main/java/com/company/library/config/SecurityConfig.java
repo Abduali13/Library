@@ -36,12 +36,12 @@ public class SecurityConfig {
                 .build();
     }
 
-
     @Autowired
     public void authenticationManagerBuilder (AuthenticationManagerBuilder builder) throws Exception{
         builder.jdbcAuthentication()
                 .passwordEncoder(passwordEncoder)
                 .dataSource(dataSource);
-    }
 
+
+    }
 }

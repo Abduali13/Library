@@ -39,4 +39,5 @@ public class Orders {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

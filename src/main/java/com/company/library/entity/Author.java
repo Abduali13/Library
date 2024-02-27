@@ -43,4 +43,5 @@ public class Author {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

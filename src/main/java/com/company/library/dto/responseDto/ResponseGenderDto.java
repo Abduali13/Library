@@ -12,15 +12,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseGenderDto {
-    private Integer genderId;
 
-    @NotBlank(message = "Gender Name cannot be null or empty")
+    private Integer genderId;
     private Gender name;
-    enum Genders{
+    enum Gender{
         MALE,
         FEMALE
     }
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

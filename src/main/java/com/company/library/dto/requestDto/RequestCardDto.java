@@ -8,7 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestCardDto {
+
     private String cardName;
     private String cardNumber;
     private Integer userId;
+
 }

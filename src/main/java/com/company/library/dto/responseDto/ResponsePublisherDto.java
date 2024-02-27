@@ -15,13 +15,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponsePublisherDto {
+
     private Integer publisherId;
-    @NotBlank(message = "Publisher cannot be null or empty")
     private String publisher;
-    @NotBlank(message = "Location cannot be null or empty")
     private String location;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

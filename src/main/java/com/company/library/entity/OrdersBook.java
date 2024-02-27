@@ -8,7 +8,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
-
 @Getter
 @Setter
 @Entity
@@ -36,10 +35,10 @@ public class OrdersBook {
     @OneToMany(mappedBy = "bookId", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Book> books;
 
-
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

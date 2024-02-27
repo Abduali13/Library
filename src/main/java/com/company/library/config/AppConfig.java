@@ -17,6 +17,7 @@ public class AppConfig {
 
     @Value(value = "${spring.datasource.username}")
     private String username;
+
     @Value(value = "${spring.datasource.password}")
     private String password;
     @Bean
@@ -30,5 +31,7 @@ public class AppConfig {
         source.setPassword(password);
         source.setDriverClass(org.postgresql.Driver.class);
         return source;
+
+
     }
 }

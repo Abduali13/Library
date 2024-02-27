@@ -36,4 +36,5 @@ public class Card {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

@@ -18,6 +18,7 @@ import java.util.Set;
 @AllArgsConstructor
 @JsonIgnoreProperties(value = "password",allowSetters = true)
 public class ResponseUserDto {
+
     private Integer userId;
 
     @NotBlank(message = "First Name cannot be null or empty")
@@ -46,4 +47,5 @@ public class ResponseUserDto {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

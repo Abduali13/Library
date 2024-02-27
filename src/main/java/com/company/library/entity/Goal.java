@@ -33,4 +33,5 @@ public class Goal {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

@@ -17,6 +17,7 @@ public class SimpleResponseDto {
             }
             default -> {
                 return null;
+
             }
         }
     }

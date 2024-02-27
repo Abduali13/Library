@@ -40,4 +40,5 @@ public class Publisher {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

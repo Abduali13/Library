@@ -9,9 +9,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestGenderDto {
+
     private Genders name;
    private enum Genders{
         MALE,
         FEMALE
+
     }
 }

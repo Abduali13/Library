@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RequestUserDto {
+
     private String firstName;
     private String lastName;
     private String username;
@@ -19,4 +20,5 @@ public class RequestUserDto {
     private String password;
     private Integer cardId;
     private LocalDate birthDate;
+
 }

@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseCardDto {
+
     private Integer cardId;
 
     @NotBlank(message = "Card Name cannot be null or empty")
@@ -28,4 +29,5 @@ public class ResponseCardDto {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }

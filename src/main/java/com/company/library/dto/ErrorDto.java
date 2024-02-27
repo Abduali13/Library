@@ -10,6 +10,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ErrorDto {
+
     String field;
     String message;
+
 }

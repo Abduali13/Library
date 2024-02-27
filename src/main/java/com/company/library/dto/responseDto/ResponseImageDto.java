@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseImageDto {
+
     private Integer imageId;
-    @NotBlank(message = "Path cannot be null or empty")
     private String path;
     private String type;
     private String size;
@@ -21,4 +21,5 @@ public class ResponseImageDto {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
+
 }
